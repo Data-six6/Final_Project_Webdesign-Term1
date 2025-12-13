@@ -59,7 +59,15 @@ nav a:hover {
   height: 24px;
   cursor: pointer;
 }
-
+.navigation-bar{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
 /* Hero Section */
 .hero {
   display: flex;
