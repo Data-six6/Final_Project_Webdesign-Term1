@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/info.css">
+    <title>Minimal Stand - Product Page</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="product-wrapper">
+            <!-- Image Section -->
+            <div class="image-section">
+                <a href="shop.html"><button class="back-btn">‹</button></a>
+                
+                <div class="color-selector">
+                    <div class="color-option color-white active" data-color="white"></div>
+                    <div class="color-option color-brown" data-color="brown"></div>
+                    <div class="color-option color-beige" data-color="beige"></div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800" alt="Minimal Stand" class="product-image">
+                
+                <div class="image-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="details-section">
+                <h1 class="product-title">Minimal Stand</h1>
+                
+                <div class="price-quantity">
+                    <div class="price">$ 50</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="decreaseQty()">−</button>
+                        <span class="quantity" id="quantity">01</span>
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+
+                <div class="rating">
+                    <span class="star">★</span>
+                    <span class="rating-value">4.5</span>
+                    <span class="review-count">(50 reviews)</span>
+                </div>
+
+                <p class="description">
+                    Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now. With 3 different colors, you can easily select the best match for your home.
+                </p>
+
+                <div class="action-buttons">
+                    <button class="bookmark-btn" onclick="toggleBookmark()">
+                        <span id="bookmark-icon">🔖</span>
+                    </button>
+                    <a href="Addingtocart.html">
+                     <button class="add-to-cart-btn" onclick="addToCart()">Add to cart</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let quantity = 1;
+        let bookmarked = false;
+
+        function increaseQty() {
+            quantity++;
+            updateQuantity();
+        }
+
+        function decreaseQty() {
+            if (quantity > 1) {
+                quantity--;
+                updateQuantity();
+            }
+        }
+
+        function updateQuantity() {
+            document.getElementById('quantity').textContent = quantity.toString().padStart(2, '0');
+        }
+
+        function toggleBookmark() {
+            bookmarked = !bookmarked;
+            document.getElementById('bookmark-icon').textContent = bookmarked ? '📌' : '🔖';
+        }
+
+        function addToCart() {
+            alert(`Added ${quantity} Minimal Stand(s) to cart!`);
+        }
+    </script>
+</body>
+</html>

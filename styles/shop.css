@@ -359,6 +359,10 @@ color: white;
   font-weight: 700;
   font-size: 25px;
 }
+.block-sell a{
+  text-decoration: none;
+  color: black;
+}
 .line1,.line-2{
   color: rgb(205, 205, 205);
 }
